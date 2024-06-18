@@ -37,7 +37,7 @@ class EmployeeController extends Controller
     public function store(EmployeeStoreRequest $request)
 
     {
-        
+       
         Employee::create($request->validated());
 
         return redirect()->route('admin.employee.index');

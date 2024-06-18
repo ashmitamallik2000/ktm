@@ -130,17 +130,19 @@
     <div class="container" data-aos="fade-up">
         <div class="row d-flex">
             <div class=" col d-flex rounded relative bg-light mb-5 mx-2">
+            
                 <div class="flex items-center p-3 gap-3">
-                    @foreach($employees as $employee)
-                    <img class="aspect-square  rounded  object-cover" src="{{$employee->photo}}"
+                   
+                    <img class="aspect-square  rounded  object-cover" src="{{officeSetting()?->informationofficer?->photo}}"
                         style="height:120px; width:150px;">
-                        @endforeach
+                       
                 </div>
+                
                 <div class="col-md-3">
-                    <h5 class="fw-bold mt-3 ">बालेन्द्र शाह</h5>
-                    <h class="text-primary">नगर प्रमुख</h>
-                    <p class="mt-1">mayor@kathmandu.gov.np</p>
-                    <p>९८१९५०००००</p>
+                    <h5 class="fw-bold mt-3 ">{{officeSetting()?->informationofficer?->name}}</h5>
+                    <h class="text-primary">{{officeSetting()?->informationofficer?->designation->title}}</h>
+                    <p class="mt-1">{{officeSetting()?->informationofficer?->email}}</p>
+                    <p>{{officeSetting()?->informationofficer?->phone}}</p>
                 </div>
             </div>
             <div class=" col d-flex rounded relative bg-light mb-5 mx-4">

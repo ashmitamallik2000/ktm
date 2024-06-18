@@ -22,30 +22,31 @@
                         mayor@kathmandu.gov.np<br>ceo@kathmandu.gov.np<br>info@kathmandu.gov.np</li>
                 </ul> -->
             <h5 class="fw-bold m-0 py-3">सम्पर्क विवरण</h5>
-            <form class="border rounded mb-3">
+            <form action="{{route('feedback')}}" class="border rounded mb-3" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                     <div class="col ms-2 mt-2 ">
                         <label class="form-label">पुरा नाम *</label>
-                        <input placeholder="पुरा नाम *" type="text" id="name" class="form-control">
+                        <input placeholder="पुरा नाम *" type="text" id="name" class="form-control" name="full_name">
                     </div>
                     <div class="col me-2 mt-2">
                         <label class="form-label">फोन नं. *</label>
-                        <input placeholder="फोन नं. *" type="number" id="phone" class="form-control">
+                        <input placeholder="फोन नं. *" type="number" id="phone" class="form-control" name="phone">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col ms-2 py-3">
                         <label class="form-label">ईमेल *</label>
-                        <input placeholder="ईमेल *" type="email" id="email" class="form-control">
+                        <input placeholder="ईमेल *" type="email" id="email" class="form-control" name="email">
                     </div>
                     <div class="col  me-2 py-3">
                         <label class="form-label">सम्पर्कको उद्देश्य *</label>
-                        <input placeholder="सम्पर्कको उद्देश्य *" type="text" id="discription" class="form-control">
+                        <input placeholder="सम्पर्कको उद्देश्य *" type="text" id="discription" class="form-control" name="objectives">
                     </div>
                 </div>
                 <div class="col ms-2 me-2">
                     <label class="form-label">सन्देश *</label>
-                    <textarea rows="3" placeholder="सन्देश *" id="message" class="form-control"></textarea>
+                    <textarea rows="3" placeholder="सन्देश *" id="message" class="form-control" name="message"></textarea>
                 </div>
                 <button class="btn mt-3 mb-3 ms-2 text-white">पेस गर्नुहोस</button>
             </form>

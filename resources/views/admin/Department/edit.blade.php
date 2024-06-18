@@ -27,27 +27,31 @@
             <h4 class="py-3 ms-4">Department</h4>
         </div>
         <div>
-            <a href="{{ route('admin.department.create') }}">
-                <button type="button" class="btn btn-warning mt-3 me-3">Create</button></a>
+            <a href="{{ route('admin.department.index') }}">
+                <button type="button" class="btn btn-primary mt-3 me-3">Department List</button></a>
         </div>
     </div>
 </div>
-<form action="{{route('admin.department.update', $department)}}" method="POST" enctype="multipart/form-data">
-    @csrf
-    @method('PUT')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label>title</label>
-                <input type="text" name="title" class="form-control" value="{{ old('title', $department->title) }}">
+<div class="card">
+    <form action="{{route('admin.department.update', $department)}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 my-3">
+                    <label>title</label>
+                    <input type="text" name="title" class="form-control" value="{{ old('title', $department->title) }}">
 
-            </div>
+                </div>
 
-            <div class="col-md-6 mb-3">
-                <label>title_en</label>
-                <input type="text" name="title_en" class="form-control" value="{{ old('title_en', $department->title_en) }}">
+                <div class="col-md-12 my-3">
+                    <label>title_en</label>
+                    <input type="text" name="title_en" class="form-control" value="{{ old('title_en', $department->title_en) }}">
+                </div>
             </div>
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    </form>
+</div>
+
 @endsection

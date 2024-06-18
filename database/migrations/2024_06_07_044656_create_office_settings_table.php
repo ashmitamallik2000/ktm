@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('logo')->nullable();
             $table->string('flag')->nullable();
             $table->string('background_image')->nullable();
-            $table->string('Map_iframe')->nullable();
-            $table->string('Facebook_iframe')->nullable();
-            $table->string('Twitter_iframe')->nullable();
+            $table->longText('Map_iframe')->nullable();
+            $table->longText('Facebook_iframe')->nullable();
+            $table->longText('Twitter_iframe')->nullable();
             $table->foreignId('information_officer_id')->nullable()->constrained('employees')->cascadeOnDelete();
             $table->foreignId('office_head_id')->nullable()->constrained('employees')->cascadeOnDelete();
             $table->foreignId('spoke_person_id')->nullable()->constrained('employees')->cascadeOnDelete();

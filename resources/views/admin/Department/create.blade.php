@@ -32,25 +32,25 @@
         </div>
     </div>
 </div>
-
+<div class="card">
 <div class="container">
-
     <form action="{{ route('admin.department.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-12 my-3">
                 <label>Title</label>
                 <input type="text" name="title" class="form-control">
 
             </div>
-            <div class=" col-md-6 mb-3">
+            <div class=" col-md-12 my-3">
                 <label>Title_en</label>
                 <input type="text" name="title_en" class="form-control">
             </div>
         </div>
 
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary my-3">Submit</button>
     </form>
+</div>
 </div>
 @endsection

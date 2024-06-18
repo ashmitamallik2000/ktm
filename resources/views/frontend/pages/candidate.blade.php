@@ -7,9 +7,10 @@
     </div>
 </div>
 <div class="container border py-5 rounded my-3">
-    <div class="input-group mb-3 mx-5">
-        <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Filter data..">
-    </div>
+<form action="" method="get" class="me-2">
+                    <input class="form-control form-control-sm filter-form w-50" name="search" type="search" placeholder="filter data....." autocomplete="off"
+                           value="{{old('search',\request('search'))}}">
+                </form>
     <div class="col-md-12 ">
         <table class="table table-hover border  mt-3">
             <thead>
@@ -22,60 +23,22 @@
                 </tr>
             </thead>
             <tbody>
+            @foreach($employees as $employee)
                 <tr>
+                   
                     <td>
                         <div>
-                            <img class="rounded" src="{{asset('assets/frontend/image\balen.png')}}" style="height:100px; width:110px;">
+                            <img class="rounded" src="{{$employee->photo}}" style="height:100px; width:110px;">
                         </div>
                     </td>
-                    <td class="py-5">बालेन्द्र शाह</td>
+                    <td class="py-5">{{$employee->name}}</td>
                     <td class="py-5">नगर प्रमुख</td>
                     <td class="py-5">mayor@kathmandu.gov.np</td>
                     <td class="py-5">123-456-7890</td>
+                   
                 </tr>
-                <tr>
-                    <td>
-                        <div>
-                            <img class="rounded" src="{{asset('assets/frontend/image\sunita.png')}}" style="height:100px; width:110px;">
-                        </div>
-                    </td>
-                    <td class="py-5">सुनिता डंगोल</td>
-                    <td class="py-5">नगर उप– प्रमुख</td>
-                    <td class="py-5">deputy.mayor@kathmandu.gov.np</td>
-                    <td class="py-5">987-654-3210</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div>
-                            <img class="rounded" src="{{asset('assets/frontend/image\dinesh.jpg')}}" style="height:100px; width:110px;">
-                        </div>
-                    </td>
-                    <td class="py-5">दिनेश महर्जन</td>
-                    <td class="py-5">वडा अध्यक्ष</td>
-                    <td class="py-5"></td>
-                    <td class="py-5">987-654-3210</td>
-                </tr>
-                <td>
-                    <div>
-                        <img class="rounded" src="{{asset('assets/frontend/image\bharat.png')}}" style="height:100px; width:110px;">
-                    </div>
-                </td>
-                <td class="py-5">भरतलाल श्रेष्ठ</td>
-                <td class="py-5">वडा अध्यक्ष</td>
-                <td class="py-5"></td>
-                <td class="py-5">987-654-3210</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div>
-                            <img class="rounded" src="{{asset('assets/frontend/image\rajendra.jpg')}}" style="height:100px; width:110px;">
-                        </div>
-                    </td>
-                    <td class="py-5">राजेन्द्र कुमार श्रेष्ठ</td>
-                    <td class="py-5">नगर उप– प्रमुख</td>
-                    <td class="py-5">deputy.mayor@kathmandu.gov.np</td>
-                    <td class="py-5">987-654-3210</td>
-                </tr>
+                @endforeach
+                
             </tbody>
         </table>
     </div>

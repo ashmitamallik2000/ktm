@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  @include('sweetalert::alert')
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
     <!-- Sidebar Start -->
@@ -29,7 +30,7 @@
         @yield('content')
 
         <div class="py-6 px-6 text-center">
-          <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a></p>
+          <p class="mb-0 fs-4">Design and Developed by<a href=""> Ashmita Mallik</a> Distributed by <a href="">NINJA INFOSYS</a></p>
         </div>
       </div>
     </div>
@@ -40,7 +41,9 @@
   <script src="{{asset('assets/backend/js/app.min.js')}}"></script>
   <script src="{{asset('assets/backend/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
   <script src="{{asset('assets/backend/libs/simplebar/dist/simplebar.js')}}"></script>
-  <script src="{{asset('assets/backend/js/dashboard.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 

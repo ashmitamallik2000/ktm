@@ -4,16 +4,14 @@
 
 
 
-    <table class="table border border-dark">
+    <table class="table border border-dark my-3 ">
         <thead>
             <tr>
                 <th class="border border-dark" scope="col ">S.No</th>
                 <th class="border border-dark" scope="col">Title</th>
                 <th class="border border-dark" scope="col">Title_en</th>
                 <th class="border border-dark" scope="col">Url</th>
-                <th class="border-dark
-                " scope="col">Action</th>
-
+                
             </tr>
             @foreach ($links as $link)
             <tr>

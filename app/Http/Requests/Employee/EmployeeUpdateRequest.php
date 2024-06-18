@@ -26,7 +26,7 @@ class EmployeeUpdateRequest extends FormRequest
             'name_en'=> ['required', 'string'],
             'email' => ['required', 'string'],
             'department_id' => ['required', 'string'],
-            'description_id' => ['required', 'string'],
+            'designation_id' => ['required', 'string'],
             'phone' => ['required', 'string'],
             'position'=> ['required', 'string'],
             'photo' => ['required', 'mimes:jpg,png,webp'],

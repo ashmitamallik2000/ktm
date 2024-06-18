@@ -23,7 +23,7 @@
                     </ul>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link active text-white fw-bold" aria-current="page" href="{{route('link')}}">महत्त्वपूर्ण लिङ्कहरू</a>
+                    <a class="nav-link active text-white fw-bold" aria-current="page" href="{{route('link')}}">लिङ्कहरू</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link active text-white fw-bold" aria-current="page" href="{{route('contact')}}">सम्पर्क</a>
@@ -32,11 +32,10 @@
 
             <div class="container">
                 <div class="input-group ">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">
-                            <i class="fa fa-search text-white"></i>
-                        </button>
+                <form action="" method="get" class="me-2">
+                    <input class="form-control form-control-sm filter-form" name="search" type="search" placeholder="Search" autocomplete="off"
+                           value="{{old('search',\request('search'))}}">
+                </form>
                     </div>
                 </div>
             </div>

@@ -42,66 +42,67 @@
     </ul>
 </div>
 @endif -->
-<div class="container">
+<div class="card">
+    <div class="container">
+        <form action="{{ route('admin.employee.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-md-12 my-3">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control border border-2">
 
-    <form action="{{ route('admin.employee.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label class="fs-4 mb-2 fw-bold">Name</label>
-                <input type="text" name="name" class="form-control border border-2">
+                </div>
+                <div class=" col-md-12 my-3">
+                    <label>Name-en</label>
+                    <input type="text" name="name_en" class="form-control border border-2">
+                </div>
+
+
+                <div class=" col-md-12 my-3">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control border border-2">
+                </div>
+                <div class=" col-md-6 my-3">
+                    <label>Department</label>
+                    <select id="department_id" name="department_id" class="bg-white border border-2 " style="height:39px; width:100%; border-radius:8px; ">
+
+                        <option value>Choose------------</option>
+
+                        @foreach ($departments as $department )
+                        <option value="{{$department->id}}">{{$department->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class=" col-md-6 my-3">
+                    <label>Designation</label>
+                    <select id="designation_id" name="designation_id" class="bg-white border border-2 " style="height:39px; width:100%; border-radius:8px; ">
+
+                        <option value>------------ Choose------------</option>
+
+                        @foreach ($designations as $designation )
+                        <option value="{{$designation->id}}">{{$designation->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class=" col-md-6 my-3">
+                    <label>Phone</label>
+                    <input name="phone" class="form-control border border-2 ">
+                </div>
+                <div class=" col-md-6 my-3">
+                    <label>Position</label>
+                    <input type="number" name="position" class="form-control border border-2">
+                </div>
+
+                <div class=" col-md-6 my-3">
+                    <label>Photo</label>
+                    <input type="file" name="photo" class="form-control border border-2">
+                </div>
 
             </div>
-            <div class=" col-md-6 mb-3">
-                <label class="fs-4 mb-2 fw-bold">Name-en</label>
-                <input type="text" name="name_en" class="form-control border border-2">
-            </div>
 
-
-            <div class=" col-md-6 mb-3">
-                <label class="fs-4 mb-2 fw-bold">Email</label>
-                <input type="email" name="email" class="form-control border border-2">
-            </div>
-            <div class=" col-md-6 mb-3">
-                <label class="fs-4 mb-2 ">Department</label>
-                <select id="department_id" name="department_id" class="bg-white border border-2 " style="height:39px; width:28rem; border-radius:8px; ">
-
-                    <option value>Choose------------</option>
-
-                    @foreach ($departments as $department )
-                    <option value="{{$department->id}}">{{$department->title}}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class=" col-md-4 mb-3">
-                <label class="fs-4 mb-2 fw-bold">Designation</label>
-                <select id="designation_id" name="designation_id" class="bg-white border border-2 fs-7" style="height:39px; width:100%; border-radius:8px; ">
-
-                    <option value>------------ Choose------------</option>
-
-                    @foreach ($designations as $designation )
-                    <option value="{{$designation->id}}">{{$designation->title}}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class=" col-md-3 mb-3">
-                <label class="fs-4 mb-2 fw-bold">Phone</label>
-                <input name="phone" class="form-control border border-2 ">
-            </div>
-            <div class=" col-md-3 mb-3">
-                <label class="fs-4 mb-2 fw-bold">Position</label>
-                <input type="number" name="position" class="form-control border border-2">
-            </div>
-
-            <div class=" col-md-6 mb-3">
-                <label class="fs-4 mb-2 fw-bold">Photo</label>
-                <input type="file" name="photo" class="form-control border border-2">
-            </div>
-
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
+        </form>
+    </div>
 </div>
 @endsection

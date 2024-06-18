@@ -32,27 +32,29 @@
         </div>
     </div>
 </div>
+<div class="card">
 <form action="{{route('admin.slider.update', $slider)}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 my-3">
                 <label>title</label>
                 <input type="text" name="title" class="form-control" value="{{ old('title', $slider->title) }}">
 
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 my-3">
                 <label>title_en</label>
                 <input type="text" name="title_en" class="form-control" value="{{ old('title_en', $slider->title_en) }}">
             </div>
 
-            <div class="mb-3">
+            <div class="my-3">
                 <label>photo</label>
                 <input type="file" name="photo" class="form-control">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary my-3">Submit</button>
 </form>
+</div>
 @endsection

@@ -1,55 +1,55 @@
 @extends('admin.layouts.masters')
 @section('content')
-<div class="d-flex justify-content-between bd-highlight">
-    <div class="p-2 bd-highlight">
+<div class="container ">
+    <div class="d-flex justify-content-between bd-highlight">
+        <div class="p-2 bd-highlight">
 
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page"> <a href="{{ route('admin.dashboard') }}">
-                        Home</a></li>
-            </ol>
-        </nav>
-    </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page"> <a href="{{ route('admin.dashboard') }}">
+                            Home</a></li>
+                </ol>
+            </nav>
+        </div>
 
-</div>
-<div class="card  bd-highlight">
-    <div class="d-flex justify-content-between">
-        <div>
-            <h4 class="py-3 ms-4">Employee</h4>
-        </div>
-        <div>
-            <a href="{{ route('admin.employee.create') }}">
-                <button type="button" class="btn btn-primary mt-3 me-3">Add Employee</button></a>
+    </div>
+    <div class="card  bd-highlight">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h4 class="py-3 ms-4">Employee</h4>
+            </div>
+            <div>
+                <a href="{{ route('admin.employee.create') }}">
+                    <button type="button" class="btn btn-primary mt-3 me-3">Add Employee</button></a>
+            </div>
         </div>
     </div>
-</div>
-<div class="container me-3">
-    <table class="table border border-dark">
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th class="border border-dark" scope="col ">S.No</th>
-                <th class="border border-dark" scope="col ">Name</th>
-                <th class="border border-dark" scope="col ">Name-en</th>
-                <th class=" border border-dark" scope="col">Email</th>
-                <th class="border border-dark" scope="col">Department</th>
-                <th class="border border-dark" scope="col">Designation</th>
-                <th class=" border border-dark" scope="col">Phone</th>
-                <th class=" border border-dark" scope="col">Position</th>
-                <th class=" border border-dark" scope="col">Photo</th>
-                <th class=" border border-dark" scope="col">Action</th>
+                <th scope="col ">S.No</th>
+                <th scope="col ">Name</th>
+                <th scope="col ">Name-en</th>
+                <th scope="col">Email</th>
+                <th scope="col">Department</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Position</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Action</th>
 
             </tr>
             @foreach ($employees as $employee)
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td class="border border-dark">{{ $employee->name }}</td>
-                <td class="border border-dark">{{ $employee->name_en}}</td>
-                <td class="border border-dark">{{ $employee->email}}</td>
-                <td class="border border-dark">{{ $employee->department->title}}</td>
-                <td class="border border-dark">{{ $employee->designation->title}}</td>
-                <td class="border border-dark">{{ $employee->phone }}</td>
-                <td class="border border-dark">{{ $employee->position }}</td>
-                <td class="border border-dark"><img src="{{ $employee->photo }}" width="100" height="100"></td>
+                <td>{{ $employee->name }}</td>
+                <td>{{ $employee->name_en}}</td>
+                <td>{{ $employee->email}}</td>
+                <td>{{ $employee->department?->title}}</td>
+                <td>{{ $employee->designation?->title}}</td>
+                <td>{{ $employee->phone }}</td>
+                <td>{{ $employee->position }}</td>
+                <td><img src="{{ $employee->photo }}" width="100" height="100"></td>
 
                 <td>
                     <div class="d-flex bd-highlight mx-0">

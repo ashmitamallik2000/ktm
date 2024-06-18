@@ -20,46 +20,17 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($laws as $law)
                 <tr>
-                    <td class="text-dark ">1</td>
-                    <td>काठमाडौं महानगरपालिकाबाट आ.ब. २०८०/८१ मा निकासा गरिएको वडास्तरीय
-                        प्रशासनिक तथा
-                        विकास निर्माण बजेट खर्च गर्ने मार्गदर्शन २०८०</td>
+                <th class="text-drak"scope="row">{{ $loop->iteration }}</th>
+                    <td>{{$law->title}}</td>
                     <td>
-                        <div class="d-flex"><a href="#"><i class="bg-primary rounded d-flex justify-content-center align-items-center
-                           fa-solid fa-file text-white fs-5" style="height:40px; width:50px;"></i></a>
-                            <a href="#"><i class="bg-primary rounded d-flex justify-content-center align-items-center
-                            fa-solid fa-file-pdf text-white fs-5 ms-2" style="height:40px; width:50px;"></i></a>
-                        </div>
+                        <button class="btn btn-primary "><a href="{{route('lawDetail',$law)
+                        }}"><i class="fa fa-eye"></i></a></button>
                     </td>
                 </tr>
-                <tr>
-                    <td class="text-dark">2</td>
-                    <td>करारमा कर्मचारी पदपूर्ति गर्ने सम्बन्धी कार्यविधि, २०७९</td>
-                    <td>
-                        <div class="d-flex"><a href="#"><i class="bg-primary rounded d-flex justify-content-center align-items-center
-                           fa-solid fa-image text-white fs-5" style="height:40px; width:50px;"></i></a>
-                            <a href="#"><i class="bg-primary rounded d-flex justify-content-center align-items-center
-                            fa-solid fa-file text-white fs-5 ms-2" style="height:40px; width:50px;"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-dark ">3</td>
-                    <td>काठमाडौं महानगरपालिका घर बहाल व्यवस्था निर्देशिका २०७९</td>
-                    <td>
-                        <a href="#"><i class="bg-primary rounded d-flex justify-content-center align-items-center
-                           fa-solid fa-image text-white fs-5" style="height:40px; width:50px;"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-dark">4</td>
-                    <td>काठमाडौं महानगरपालिका साझेदारी तथा लगानी ऐन २०७</td>
-                    <td>
-                        <a href="#"><i class="bg-primary rounded d-flex justify-content-center align-items-center
-                           fa-solid fa-file-pdf text-white fs-5" style="height:40px; width:50px;"></i></a>
-                    </td>
-                </tr>
+                @endforeach
+               
             </tbody>
         </table>
     </div>

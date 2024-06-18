@@ -18,7 +18,7 @@
 
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
     <!-- modal -->
-    
+    @include('sweetalert::alert')
 
     @include('frontend.partials.header')
 
